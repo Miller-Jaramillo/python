@@ -1,0 +1,13 @@
+Django
+gunicorn
+psycopg2-binary
+django-ckeditor
+django-ckeditor-widget
+django-phone-field
+djangorestframework
+djangorestframework-simplejwt 
+django-model-utils
+django-jsonfield
+import_export
+django-import_export
+chartjs

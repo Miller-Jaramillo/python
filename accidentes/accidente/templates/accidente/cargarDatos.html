@@ -1,0 +1,7 @@
+{% extends 'mainapp/index.html' %} {% block content %} Cargando datos
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file" name="xlsfile" />
+  <button type="submit">Subir</button>
+</form>
+{% endblock %}

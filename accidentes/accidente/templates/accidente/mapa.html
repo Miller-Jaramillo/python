@@ -1,0 +1,63 @@
+{% extends 'mainapp/index.html' %} {% block content %} {% load static %}
+<div class="row">
+  <div class="mb-3">
+    <h1 class="h3 d-inline align-middle">Google Maps</h1>
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Mapa predeterminado</h5>
+        <h6 class="card-subtitle text-muted">
+          Muestra la vista de mapa de carreteras predeterminada.
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="content" id="default_map" style="height: 300px"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Mapa hibrido</h5>
+        <h6 class="card-subtitle text-muted">
+          Muestra una mezcla de vistas normales y de satélite.
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="content" id="hybrid_map" style="height: 300px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/app.js' %}"></script>
+
+<script>
+  function initMaps() {
+    var defaultMap = {
+      zoom: 14,
+      center: {
+        lat: 1.214785,
+        lng: -77.277799,
+      },
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+    new google.maps.Map(document.getElementById("default_map"), defaultMap);
+    var hybridMap = {
+      zoom: 14,
+      center: {
+        lat: 1.213354,
+        lng: -77.277321,
+      },
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+    };
+    new google.maps.Map(document.getElementById("hybrid_map"), hybridMap);
+  }
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-aWrwgr64q4b3TEZwQ0lkHI4lZK-moM4&callback=initMaps"
+  async
+  defer
+></script>
+{%endblock%}

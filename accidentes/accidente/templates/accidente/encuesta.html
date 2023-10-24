@@ -1,0 +1,427 @@
+{% extends 'layouts/layout.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuesta</title>
+  </head>
+  <body>
+    <main class="content">
+      <div class="container-fluid p-0">
+        <div class="mb-0"></div>
+        <div class="h2">Encuesta</div>
+        <div class="text-lg text-muted p-0 mt-3">
+          Aqui obligatoriamente debemos llenar una encuesta antes de utilizar la
+          aplicacion y otra despues de utilizar la aplicacion.
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">
+                  Preguntas acerca de la aplicacion
+                </h5>
+              </div>
+              <div class="card-body">
+                <span class="form-check-label">
+                  ¿Que calificacion darias a la apliacion?
+                </span>
+                <select class="form-select mb-3">
+                  <option selected>Excelente</option>
+                  <option>Normal</option>
+                  <option>Mala</option>
+                  <option>Muy mala</option>
+                </select>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="form-check-label">
+                    ¿Que tal es la informacion que brinda la aplicacion?
+                  </span>
+                  <select class="form-select mb-3">
+                    <option>Excelente</option>
+                    <option selected>Normal</option>
+                    <option>Mala</option>
+                    <option>Muy mala</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Sugerencias</h5>
+              </div>
+              <div class="card-body">
+                <div>
+                  <textarea
+                    class="form-control"
+                    rows="2"
+                    placeholder="Escribe tu respuesta"
+                  ></textarea>
+                  {% comment %}
+                  <label class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="option1"
+                      name="radios-example"
+                      checked
+                    />
+                    <span class="form-check-label">
+                      Option one is this and that&mdash;be sure to include why
+                      it's great
+                    </span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="option2"
+                      name="radios-example"
+                    />
+                    <span class="form-check-label">
+                      Option two can be something else and selecting it will
+                      deselect option one
+                    </span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="option3"
+                      name="radios-example"
+                      disabled
+                    />
+                    <span class="form-check-label">
+                      Option three is disabled
+                    </span>
+                  </label>
+                </div>
+                <div>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inline-radios-example"
+                      value="option1"
+                    />
+                    <span class="form-check-label"> 1 </span>
+                  </label>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inline-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 2 </span>
+                  </label>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inline-radios-example"
+                      value="option3"
+                      disabled
+                    />
+                    <span class="form-check-label"> 3 </span>
+                  </label>
+                  {% endcomment %}
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Checkboxes</h5>
+              </div>
+              <div class="card-body">
+                <div>
+                  <label class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" />
+                    <span class="form-check-label">
+                      
+                    </span>
+                  </label>
+                  <label class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      disabled
+                    />
+                    <span class="form-check-label">
+             
+                    </span>
+                  </label>
+                </div>
+                <div>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="option1"
+                    />
+                    <span class="form-check-label"> 1 </span>
+                  </label>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 2 </span>
+                  </label>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="option3"
+                      disabled
+                    />
+                    <span class="form-check-label"> 3 </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Read only</h5>
+              </div>
+              <div class="card-body">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Readonly input"
+                  readonly
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Preguntas personales</h5>
+
+                <div class="card-body">
+                  <span class="form-check-label">
+                    ¿Del 1 al 5 que nivel te consideras tener de conocimiento
+                    sobre seguridad vial?
+                  </span>
+                  <label class="form-check form-check-line">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="line-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 1 </span>
+                  </label>
+                  <label class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inline-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 2 </span>
+                  </label>
+                  <label class="form-check form-check-line">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="line-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 3 </span>
+                  </label>
+                  <label class="form-check form-check-line">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="line-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 4 </span>
+                  </label>
+                  <label class="form-check form-check-line">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="line-radios-example"
+                      value="option2"
+                    />
+                    <span class="form-check-label"> 5 </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="form-check-label">
+                    Para ti, ¿Porque es importante la seguridad vial?
+                  </span>
+                  <textarea
+                    class="form-control"
+                    rows="2"
+                    placeholder="Escribe tu respuesta"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <span class="form-check-label">
+                    ¿Porque cree usted que se presenta tanto accidente en la
+                    ciudad de Pasto?
+                  </span>
+                  <textarea
+                    class="form-control"
+                    rows="2"
+                    placeholder="Escribe tu respuesta"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+            <div class="card-body">
+              <span class="form-check-label">
+                ¿Del 1 al 5 que nivel te consideras tener de conocimiento
+                sobre seguridad vial?
+              </span>
+              <label class="form-check form-check-line">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="line-radios-example"
+                  value="option2"
+                />
+                <span class="form-check-label"> 1 </span>
+              </label>
+              <label class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inline-radios-example"
+                  value="option2"
+                />
+                <span class="form-check-label"> 2 </span>
+              </label>
+              <label class="form-check form-check-line">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="line-radios-example"
+                  value="option2"
+                />
+                <span class="form-check-label"> 3 </span>
+              </label>
+              <label class="form-check form-check-line">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="line-radios-example"
+                  value="option2"
+                />
+                <span class="form-check-label"> 4 </span>
+              </label>
+              <label class="form-check form-check-line">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="line-radios-example"
+                  value="option2"
+                />
+                <span class="form-check-label"> 5 </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Checkboxes</h5>
+          </div>
+          <div class="card-body">
+            <div>
+              <label class="form-check">
+                <input class="form-check-input" type="checkbox" value="" />
+                <span class="form-check-label">
+                  Option one is this and that&mdash;be sure to include why
+                  it's great
+                </span>
+              </label>
+              <label class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  disabled
+                />
+                <span class="form-check-label">
+                  Option two is disabled
+                </span>
+              </label>
+            </div>
+            <div>
+              <label class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="option1"
+                />
+                <span class="form-check-label"> 1 </span>
+              </label>
+              <label class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="option2"
+                />
+                <span class="form-check-label"> 2 </span>
+              </label>
+              <label class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="option3"
+                  disabled
+                />
+                <span class="form-check-label"> 3 </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Read only</h5>
+          </div>
+          <div class="card-body">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Readonly input"
+              readonly
+            />
+          </div>
+        </div>
+      </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layouts/layout.html' %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual</title>
+  </head>
+  <body>
+    <div class="col-12 col-md-0 col-xxl-3 d-flex order-1 order-xxl-1">
+      <div class="card flex-fill">
+          <div class="card-body d-flex">
+              <div class="align-self-center w-100">   
+                    <    <div id="about" class="about">
+                      <div class="container-fluid">
+                         <div class="row">
+                            <div class="col-md-12 col-lg-7">
+                               <div class="about_box">
+                                  <div class="titlepage">
+                                     <h2><strong class="black">VISUAL APP</strong><br> Desarrollo de una Aplicación Móvil que Brinde Información de Seguridad Vial en el Municipio De San Juan De Pasto a Través de Dashboard</h2>
+                                  </div>
+                                  <p>Su principal funcion es encargarse de administrar datos y convertirlos en Dashboard para tener una mejor comprension hacia el usuario</p>
+                                  <span class="try">Para mayor informacion</span>
+                                  <a class="read_morea" href="#">CLICL AQUI<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                               </div>
+                            </div>
+                            <div class="col-md-12 col-lg-5">
+                               <div class="about_img">
+                                  <figure><img src="{% static 'img/photos/logo.jpg' %}" alt="#" /></figure>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="col-md-4 col-sm-4 d_none">
+  <ul class="conta_icon ">
+     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> santiago@gmail.com</a> </li>
+  </ul>
+</div
+  </body>
+</html>
+{% endblock %}

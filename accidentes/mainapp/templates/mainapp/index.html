@@ -1,0 +1,493 @@
+{%  extends 'layouts/layout.html'  %} 
+{% load static %}
+{% block content %}
+<main class="content">
+    <div class="container-fluid p-0">
+
+         <h1 class="h3 mb-3"><strong>Analisis de datos</strong></h1>
+
+        <div class="row">
+            <div class="col-xl-6 col-xxl-5 d-flex">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Reporte OMS</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">+7.000</h1>
+                                    <div class="mb-0">
+                                        <span class="text-muted">accidentes viales en Colombia en el  </span>
+                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 2017 </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Reporte Alcaldia de Pasto</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">5.134</h1>
+                                    <div class="mb-0">
+                                        <span class="text-muted">lesionados en accidente de transito en los ultimos 4 años</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Reporte accidentes en el centro de Pasto</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">1530</h1>
+                                    <div class="mb-0">
+                                        <span class="text-muted">accidentes desde <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 2020 </span> a </span> 
+                                    </div><span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 2022 </span> 
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Reporte Accidentes en Pandemia</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 604 </h1>
+                                    <div class="mb-0">
+                                        
+                                        <span class="text-muted">en el año 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-xxl-7">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Accidentes por año</h5>
+                    </div>
+                    <div class="card-body py-3">
+                        <div class="chart chart-sm">
+                            <canvas id="chartjs-dashboard-line"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Accidentes por genero</h5>
+                    </div>
+                    <div class="card-body d-flex">
+                        <div class="align-self-center w-100">
+                            <div class="py-3">
+                                <div class="chart chart-xs">
+                                    <canvas id="chartjs-dashboard-pie"></canvas>
+                                </div>
+                            </div>
+
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>Femenino</td>
+                                        <td class="text-end">76</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Masculino</td>
+                                        <td class="text-end">231</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Mapa San Juan de Pasto</h5>
+                    </div>
+                    <div class="card-body px-4">
+                        <div id="world_map" style="height:350px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
+                <div class="card flex-fill">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Calendario</h5>
+                    </div>
+                    <div class="card-body d-flex">
+                        <div class="align-self-center w-100">
+                            <div class="chart">
+                                <div id="datetimepicker-dashboard"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-8 col-xxl-9 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Lista</h5>
+                    </div>
+                    <table class="table table-hover my-0">
+                        <thead>
+                            <tr>
+                                <th>Fecha accidente</th>
+                                <th class="d-none d-xl-table-cell">Lugar</th>
+                                <th class="d-none d-xl-table-cell">Clase accidente</th>
+                                <th>Caso</th>
+                                <th class="d-none d-md-table-cell">Genero</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20/02/2017</td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-danger">Fallecio</span></td>
+                                <td class="d-none d-md-table-cell">Masculino</td>
+                            </tr>
+                            <tr>
+                                <td>18/03/2017</td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-danger">Fallecio</span></td>
+                                <td class="d-none d-md-table-cell">Masculino</td>
+                            </tr>
+                            <tr>
+                                <td>29/06/2017
+                                </td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-warning">Hospitalizado</span></td>
+                                <td class="d-none d-md-table-cell">Masculino</td>
+                            </tr>
+                            <tr>
+                                <td>13/07/2017</td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-warning">Hospitalizado</span></td>
+                                <td class="d-none d-md-table-cell">Masculino</td>
+                            </tr>
+                            <tr>
+                                <td>3/05/2018
+                                </td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-danger">Fallecio</span></td>
+                                <td class="d-none d-md-table-cell">Femenino</td>
+                            </tr>
+                            <tr>
+                                <td>29/07/2018
+                                </td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Choque</td>
+                                <td><span class="badge bg-danger">Fallecio</span></td>
+                                <td class="d-none d-md-table-cell">Femenino</td>
+                            </tr>
+                            <tr>
+                                <td>29/10/2020
+                                </td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Atropello</td>
+                                <td><span class="badge bg-warning">Hospitalizado</span></td>
+                                <td class="d-none d-md-table-cell">Masculino</td>
+                            </tr>
+                            <tr>
+                                <td>21/11/2021
+                                </td>
+                                <td class="d-none d-xl-table-cell">Centro</td>
+                                <td class="d-none d-xl-table-cell">Atropello</td>
+                                <td><span class="badge bg-danger">Fallecio</span></td>
+                                <td class="d-none d-md-table-cell">Femenino</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 col-xxl-3 d-flex">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
+
+                        <h5 class="card-title mb-0">Accidentes por comuna</h5>
+                    </div>
+                    <div class="card-body d-flex w-100">
+                        <div class="align-self-center chart chart-lg">
+                            <canvas id="chartjs-dashboard-bar"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+<script src="{% static 'js/app.js' %}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+        var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+        gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+        gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+        // Line chart
+        new Chart(document.getElementById("chartjs-dashboard-line"), {
+            type: "line",
+            data: {
+                labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+                datasets: [{
+                    label: "Accidentes ($)",
+                    fill: true,
+                    backgroundColor: gradient,
+                    borderColor: window.theme.primary,
+                    data: [
+                        1497,
+                        1679,
+                        1564,
+                        853,
+                        154,
+                        269,
+                        756
+                    ]
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    intersect: false
+                },
+                hover: {
+                    intersect: true
+                },
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        reverse: true,
+                        gridLines: {
+                            color: "rgba(0,0,0,0.0)"
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 1000
+                        },
+                        display: true,
+                        borderDash: [3, 3],
+                        gridLines: {
+                            color: "rgba(0,0,0,0.0)"
+                        }
+                    }]
+                }
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Pie chart
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: ["Femenino", "Masculino"],
+                datasets: [{
+                    data: [76, 231],
+                    backgroundColor: [
+                        window.theme.primary,
+                        window.theme.warning
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 75
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Bar chart
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar",
+            data: {
+                labels: ["Com1", "Com2", "Com3", "Com4", "Com5", "Com6", "Com7", "Com8", "Com9", "Com10", "Com11", "Com12"],
+                datasets: [{
+                    label: "Esta comuna",
+                    backgroundColor: window.theme.primary,
+                    borderColor: window.theme.primary,
+                    hoverBackgroundColor: window.theme.primary,
+                    hoverBorderColor: window.theme.primary,
+                    data: [109, 35, 11, 18, 25, 11, 36, 34, 16, 2, 6, 4],
+                    barPercentage: .75,
+                    categoryPercentage: .5
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        gridLines: {
+                            display: false
+                        },
+                        stacked: false,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }],
+                    xAxes: [{
+                        stacked: false,
+                        gridLines: {
+                            color: "transparent"
+                        }
+                    }]
+                }
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var markers = [{
+                coords: [1.215551, -77.277590],
+                name: "Cra-26-#19-centro"
+            },
+            {
+                coords: [1.215631, -77.281870],
+                name: "Cll-15-Cra-25-centro"
+            },
+            {
+                coords: [1.213356, -77.277749],
+                name: "Cll-19-Cra-23-centro"
+            },
+            {
+                coords: [1.213009, -77.280099],
+                name: "Cll-16-Cra-23-centro"
+            },
+            {
+                coords: [1.218158, -77.283401],
+                name: "Cll-16-Cra-31-centro"
+            },
+            {
+                coords: [1.210934, -77.275949],
+                name: "Cll-19-Cra-20-centro"
+            },
+            {
+                coords: [1.210544, -77.277142],
+                name: "Cll-18-Cra-20-centro"
+            },
+            {
+                coords: [1.213354, -77.277321],
+                name: "Cll-19-Cra-22-centro"
+            },
+            {
+                coords: [1.214785, -77.277799],
+                name: "Cll-19-Cra-24-centro"
+            }
+        ];
+        var map = new jsVectorMap({
+            map: "world",
+            selector: "#world_map",
+            zoomButtons: true,
+            markers: markers,
+            markerStyle: {
+                initial: {
+                    r: 9,
+                    strokeWidth: 7,
+                    stokeOpacity: .4,
+                    fill: window.theme.primary
+                },
+                hover: {
+                    fill: window.theme.primary,
+                    stroke: window.theme.primary,
+                    cursor: 'pointer'
+                }
+            },
+            zoomOnScroll: true
+        });
+        window.addEventListener("resize", () => {
+            map.updateSize();
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+            defaultDate: defaultDate
+        });
+    });
+</script>
+
+</body>
+
+{% endblock %}
